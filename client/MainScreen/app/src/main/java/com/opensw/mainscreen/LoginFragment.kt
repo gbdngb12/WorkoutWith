@@ -10,25 +10,25 @@ import android.view.ViewGroup
 import com.opensw.mainscreen.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
-	var mainActivity: MainActivity? = null
+    var mainActivity: MainActivity? = null
 
-	override fun onCreateView(
-		inflater: LayoutInflater, container: ViewGroup?,
-		savedInstanceState: Bundle?
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
 
-	): View? {
-		val intent = Intent(activity, MajorScreen::class.java)
-		val binding = FragmentLoginBinding.inflate(inflater, container, false)
-		binding.btnRegister.setOnClickListener { mainActivity?.goRegisterFragment() }
-		binding.btnFindId.setOnClickListener { mainActivity?.goFindIdFragment() }
-		binding.btnFindPassword.setOnClickListener { mainActivity?. goFindPasswordFragment() }
-		binding.btnLogin.setOnClickListener { mainActivity?.startActivity(intent) }
-		return binding.root
-	}
+    ): View? {
+        val intent = Intent(activity, MajorScreen::class.java)
+        val binding = FragmentLoginBinding.inflate(inflater, container, false)
+        binding.btnRegister.setOnClickListener { mainActivity?.goRegisterFragment() }
+        binding.btnFindId.setOnClickListener { mainActivity?.goFindIdFragment() }
+        binding.btnFindPassword.setOnClickListener { mainActivity?.goFindPasswordFragment() }
+        binding.btnLogin.setOnClickListener { mainActivity?.startActivity(intent) }
+        return binding.root
+    }
 
-	override fun onAttach(context: Context) {
-		super.onAttach(context)
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
 
-		if (context is MainActivity) mainActivity = context
-	}
+        if (context is MainActivity) mainActivity = context
+    }
 }

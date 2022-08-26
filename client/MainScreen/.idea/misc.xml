@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/kjgho/Documents/WorkoutWith/client/MainScreen/app/src/main/res/layout/activity_major_screen.xml" value="0.5" />
+        <entry key="..\:/Users/kjgho/Documents/WorkoutWith/client/MainScreen/app/src/main/res/layout/fragment_community_screen.xml" value="0.33" />
+        <entry key="..\:/Users/kjgho/Documents/WorkoutWith/client/MainScreen/app/src/main/res/layout/fragment_home_screen.xml" value="0.3421875" />
+        <entry key="..\:/Users/kjgho/Documents/WorkoutWith/client/MainScreen/app/src/main/res/layout/fragment_matching_start.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/kjgho/Documents/WorkoutWith/client/MainScreen/app/src/main/res/layout/fragment_my_profile_screen.xml" value="0.3828125" />
+        <entry key="..\:/Users/kjgho/Documents/WorkoutWith/client/MainScreen/app/src/main/res/layout/fragment_ranking_screen.xml" value="0.3828125" />
+        <entry key="..\:/Users/kjgho/Documents/WorkoutWith/client/MainScreen/app/src/main/res/layout/matching_recycler.xml" value="0.2911458333333333" />
         <entry key="..\:/Users/kjgho/MainScreen/app/src/main/res/layout/activity_main.xml" value="0.2859375" />
         <entry key="..\:/Users/kjgho/MainScreen/app/src/main/res/layout/fragment_find_id.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/kjgho/MainScreen/app/src/main/res/layout/fragment_find_password.xml" value="0.3333333333333333" />
