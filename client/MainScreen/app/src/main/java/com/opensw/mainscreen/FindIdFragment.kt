@@ -20,7 +20,7 @@ class FindIdFragment : Fragment() {
 
 	): View? {
 		binding = FragmentFindIdBinding.inflate(inflater, container, false)
-		binding.btnBackFromFindId.setOnClickListener { mainActivity.goBack() }
+		binding.btnBackFromFindId.setOnClickListener { mainActivity.goFindPasswordFragment() }
 		return binding.root
 	}
 
