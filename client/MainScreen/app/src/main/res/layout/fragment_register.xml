@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:clickable="true"
-    tools:context=".RegisterFragment">
+    tools:context=".login.RegisterFragment">
 
     <TextView
         android:id="@+id/textRegister"

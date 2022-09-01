@@ -1,4 +1,4 @@
-package com.opensw.mainscreen
+package com.opensw.mainscreen.login
 
 import android.content.Context
 import android.content.Intent
@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.opensw.mainscreen.mainscreen.MajorScreen
 import com.opensw.mainscreen.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {

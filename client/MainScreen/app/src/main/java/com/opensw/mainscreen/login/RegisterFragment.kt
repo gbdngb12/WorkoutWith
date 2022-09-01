@@ -1,4 +1,4 @@
-package com.opensw.mainscreen
+package com.opensw.mainscreen.login
 
 import android.content.Context
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.opensw.mainscreen.databinding.FragmentRegisterBinding
+import com.opensw.mainscreen.login.MainActivity
 
 class RegisterFragment : Fragment() {
 	lateinit var mainActivity: MainActivity

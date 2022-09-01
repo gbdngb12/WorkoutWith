@@ -1,4 +1,4 @@
-package com.opensw.mainscreen
+package com.opensw.mainscreen.login
 
 import android.content.Context
 import android.os.Bundle

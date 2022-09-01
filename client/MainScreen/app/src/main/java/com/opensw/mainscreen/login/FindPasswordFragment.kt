@@ -1,4 +1,4 @@
-package com.opensw.mainscreen
+package com.opensw.mainscreen.login
 
 import android.content.Context
 import android.os.Bundle
@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
-import com.opensw.mainscreen.databinding.FragmentFindIdBinding
 import com.opensw.mainscreen.databinding.FragmentFindPasswordBinding
 
 class FindPasswordFragment : Fragment() {

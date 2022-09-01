@@ -1,9 +1,8 @@
-package com.opensw.mainscreen
+package com.opensw.mainscreen.login
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.opensw.mainscreen.databinding.ActivityMainBinding
+import com.opensw.mainscreen.R
 
 class MainActivity : AppCompatActivity() {
 
