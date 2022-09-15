@@ -1,6 +1,8 @@
 package com.bubu.workoutwithclient.userinterface.login
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -45,7 +47,7 @@ class LoginRegisterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        val builder = AlertDialog.Builder(mainActivity)
         mainActivity?.setTitle("회원가입")
         val binding = LoginRegisterFragmentBinding.inflate(inflater, container, false)
         binding.btnRegisterConfirm.setOnClickListener {
@@ -58,10 +60,19 @@ class LoginRegisterFragment : Fragment() {
                 )
 				if(result == true) {
                     CoroutineScope(Dispatchers.Main).launch {
-                        mainActivity.goBack()
+                        builder.setMessage("인증 메일이 발송되었습니다. \n입력하신 이메일을 확인해주세요.")
+                        builder.setPositiveButton("확인", DialogInterface.OnClickListener
+                        { dialogInterface, i -> mainActivity?.goBack() })
+                        builder.show()
                     }
 				} else {
 					Log.d("error",result.toString())
+                    CoroutineScope(Dispatchers.Main).launch {
+                        builder.setMessage("입력하신 내용을 다시 확인해주세요.")
+                        builder.setPositiveButton("확인", DialogInterface.OnClickListener
+                        { dialogInterface, i -> })
+                        builder.show()
+                    }
 				}
             }
 

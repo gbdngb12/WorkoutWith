@@ -223,10 +223,6 @@ class MatchStartFragment : Fragment() {
         mainScreenActivity = context as MainScreenActivity
     }
 
-    /*override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(com.bubu.workoutwithclient.R.menu.match_start_action_bar, menu)
-    }*/
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.home -> mainScreenActivity?.goBack()

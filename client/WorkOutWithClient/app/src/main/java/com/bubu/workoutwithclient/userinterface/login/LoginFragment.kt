@@ -73,7 +73,7 @@ class LoginFragment : Fragment() {
     ): View? {
         val intent = Intent(activity, MainScreenActivity::class.java)
         val binding = LoginFragmentBinding.inflate(inflater, container, false)
-
+        val builder = AlertDialog.Builder(mainActivity)
 
         with(binding) {
             btnRegister.setOnClickListener { mainActivity?.goLoginRegisterFragment() }
@@ -86,15 +86,14 @@ class LoginFragment : Fragment() {
                         val res = isProfile()
                         if(res is UserIsProfileResponseData) {
                             if(res.snsResult == 0) {
-                                val builder = AlertDialog.Builder(mainActivity)
-                                /*builder.setMessage("새로운 프로필을 등록해주세요.")
+                                CoroutineScope(Dispatchers.Main).launch {
+                                    builder.setMessage("새로운 프로필을 등록해주세요.")
                                 builder.setPositiveButton("확인", DialogInterface.OnClickListener{
                                         dialogInterface, i -> mainActivity?.goLoginCreateNewProfileFragment() })
-                                builder.show()*/
-                                mainActivity?.goLoginCreateNewProfileFragment()
+                                builder.show()
+                                }
                             } else if(res.snsResult == 99){
                                 CoroutineScope(Dispatchers.Main).launch {
-                                    val builder = AlertDialog.Builder(mainActivity)
                                     builder.setMessage("로그인 되었습니다.")
                                     builder.setPositiveButton("확인", DialogInterface.OnClickListener{
                                             dialogInterface, i -> mainActivity?.startActivity(intent) })
@@ -102,18 +101,14 @@ class LoginFragment : Fragment() {
                                 }
                             }
                         } else {
-                            /*val builder = AlertDialog.Builder(mainActivity)
+                        }
+                    } else {
+                        CoroutineScope(Dispatchers.Main).launch {
                             builder.setMessage("아이디, 비밀번호를 다시 확인하세요")
                             builder.setPositiveButton("확인", DialogInterface.OnClickListener{
                                     dialogInterface, i -> })
-                            builder.show()*/
+                            builder.show()
                         }
-                    } else {
-                        /*val builder = AlertDialog.Builder(mainActivity)
-                        builder.setMessage("아이디, 비밀번호를 다시 확인하세요")
-                        builder.setPositiveButton("확인", DialogInterface.OnClickListener{
-                                dialogInterface, i -> mainActivity?.onBackPressed() })
-                        builder.show() */
                     }
                 }
 

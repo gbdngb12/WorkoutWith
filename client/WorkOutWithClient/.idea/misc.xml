@@ -47,6 +47,10 @@
         <entry key="..\:/Users/kjgho/Documents/WorkoutWith/WorkoutWith/client/WorkOutWithClient/app/src/main/res/menu/match_home_action_bar.xml" value="0.31302083333333336" />
         <entry key="..\:/Users/kjgho/Documents/WorkoutWith/WorkoutWith/client/WorkOutWithClient/app/src/main/res/menu/match_start_action_bar.xml" value="0.31197916666666664" />
         <entry key="..\:/Users/kjgho/Documents/WorkoutWith/WorkoutWith/client/WorkOutWithClient/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.316" />
+        <entry key="..\:/Users/kjgho/LastCode/WorkoutWith/client/WorkOutWithClient/app/src/main/res/layout/match_my_chat_recycler.xml" value="0.2859375" />
+        <entry key="..\:/Users/kjgho/LastCode/WorkoutWith/client/WorkOutWithClient/app/src/main/res/layout/match_op_chat_recycler.xml" value="0.275" />
+        <entry key="..\:/Users/kjgho/LastCode/WorkoutWith/client/WorkOutWithClient/app/src/main/res/layout/match_room_activity.xml" value="0.2859375" />
+        <entry key="..\:/Users/kjgho/LastCode/WorkoutWith/client/WorkOutWithClient/app/src/main/res/layout/match_vote_chat_recycler.xml" value="0.2859375" />
       </map>
     </option>
   </component>

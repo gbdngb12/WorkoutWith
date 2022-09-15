@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +20,7 @@ import com.bubu.workoutwithclient.firebasechat.ChatVoteMessage
 import com.bubu.workoutwithclient.retrofitinterface.*
 import kotlinx.coroutines.*
 import java.net.URL
+import java.text.SimpleDateFormat
 
 fun checkChatRoom(matchId: String, title: String, profileAdapter: MatchTeamAdapter, binding: MatchRoomActivityBinding) {
     val checkChatObject = UserFirebaseCheckChatRoomModule(matchId, title,profileAdapter,binding)
@@ -233,7 +235,8 @@ class MatchRoomActivity : AppCompatActivity() {
             RecyclerView.ViewHolder(binding.root) {
             fun setMsg(msg: ChatMessage) {
                 if(msg.type == "1"){
-                    binding.textMsg.setOnClickListener {
+                    binding.button2.isVisible = true
+                    binding.button2.setOnClickListener {
                         Log.d("voteClick",(msg as ChatVoteMessage).voteId)
                         goJoinScheduleFragment(msg)
                     }
@@ -242,17 +245,20 @@ class MatchRoomActivity : AppCompatActivity() {
                 binding.textMsg.text = msg.msg
                 binding.textDate.text = "${msg.timestamp}"
             }
+
         }
 
         inner class HolderMy(val binding: MatchMyChatRecyclerBinding) :
             RecyclerView.ViewHolder(binding.root) {
             fun setMsg(msg: ChatMessage) {
                 if(msg.type == "1"){
-                    binding.textMsg.setOnClickListener {
+                    binding.button3.isVisible = true
+                    binding.button3.setOnClickListener {
                         Log.d("voteClick",(msg as ChatVoteMessage).voteId)
                         goJoinScheduleFragment(msg)
                     }
                 }
+                val ref = SimpleDateFormat("yyyy-MM-dd hh:mm:ss")
                 binding.textMsg.text = msg.msg
                 binding.textDate.text = "${msg.timestamp}"
             }
