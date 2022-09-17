@@ -50,7 +50,7 @@ const val sgisconsumerSecret= "Input Your SGIS OpenAPI consumerSecret(Secret Key
 
 <img src="https://user-images.githubusercontent.com/104804087/190549870-9e7b0e9d-1529-4d6f-ba2e-bb2dc21bf92f.png" height="200">
 
-3-3(for client) Check the `signingConfigs`, `buildTypes` in Directory `client/app/build.gradle` first before generating the key.
+3-3(for client) Check the `signingConfigs`, `buildTypes` in `client/app/build.gradle` first before generating the key.
 *Below is an example.*
 
 ![image](https://user-images.githubusercontent.com/104804087/190551227-f4b24154-e2a9-4ba5-8ab6-76ef4cce7558.png)
