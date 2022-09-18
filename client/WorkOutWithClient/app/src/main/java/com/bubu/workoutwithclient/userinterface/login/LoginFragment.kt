@@ -1,5 +1,6 @@
 package com.bubu.workoutwithclient.userinterface.login
 
+import android.Manifest
 import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
@@ -10,6 +11,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import com.bubu.workoutwithclient.databinding.LoginFragmentBinding
 import com.bubu.workoutwithclient.retrofitinterface.*
 import com.bubu.workoutwithclient.userinterface.MainScreenActivity
@@ -64,6 +67,17 @@ suspend fun isProfile() : Any? {
 }
 
 class LoginFragment : Fragment() {
+    private val permissionList = arrayOf(
+        Manifest.permission.CAMERA,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.READ_EXTERNAL_STORAGE)
+
+    private val requestMultiplePermission = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { results ->
+        results.forEach {
+            if(!it.value) {
+            }
+        }
+    }
     var mainActivity: LoginActivity? = null
 
     override fun onCreateView(
@@ -74,6 +88,7 @@ class LoginFragment : Fragment() {
         val intent = Intent(activity, MainScreenActivity::class.java)
         val binding = LoginFragmentBinding.inflate(inflater, container, false)
         val builder = AlertDialog.Builder(mainActivity)
+        requestMultiplePermission.launch(permissionList)
 
         with(binding) {
             btnRegister.setOnClickListener { mainActivity?.goLoginRegisterFragment() }

@@ -55,7 +55,6 @@ class ProfileEditFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = ProfileEditFragmentBinding.inflate(inflater, container, false)
-        requestMultiplePermission.launch(permissionList)
         binding.editProfileImage.setOnClickListener {
             openDialog(mainScreenActivity)
         }
@@ -190,20 +189,6 @@ class ProfileEditFragment : Fragment() {
 
     private val getTakePicturePreview = registerForActivityResult(ActivityResultContracts.TakePicturePreview()) { bitmap ->
         bitmap.let { binding.editProfileImage.setImageBitmap(bitmap) }
-    }
-
-    private val permissionList = arrayOf(
-        Manifest.permission.CAMERA,
-        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-        Manifest.permission.READ_EXTERNAL_STORAGE)
-
-    private val requestMultiplePermission = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { results ->
-        results.forEach {
-            if(!it.value) {
-                Toast.makeText(mainScreenActivity, "권한 허용 필요", Toast.LENGTH_SHORT).show()
-                mainScreenActivity?.finish()
-            }
-        }
     }
 
     private fun createImageFile(): Uri? {

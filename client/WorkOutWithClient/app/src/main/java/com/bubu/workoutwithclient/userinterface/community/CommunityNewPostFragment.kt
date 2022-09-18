@@ -1,6 +1,5 @@
 package com.bubu.workoutwithclient.userinterface.community
 
-import android.Manifest
 import android.app.AlertDialog
 import android.content.ContentValues
 import android.content.Context
@@ -151,22 +150,6 @@ class CommunityNewPostFragment : Fragment() {
     private val getTakePicturePreview =
         registerForActivityResult(ActivityResultContracts.TakePicturePreview()) { bitmap ->
             bitmap.let { binding.imagePostView.setImageBitmap(bitmap) }
-        }
-
-    private val permissionList = arrayOf(
-        Manifest.permission.CAMERA,
-        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-        Manifest.permission.READ_EXTERNAL_STORAGE
-    )
-
-    private val requestMultiplePermission =
-        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { results ->
-            results.forEach {
-                if (!it.value) {
-                    Toast.makeText(mainScreenActivity, "권한 허용 필요", Toast.LENGTH_SHORT).show()
-                    mainScreenActivity?.finish()
-                }
-            }
         }
 
     private fun createImageFile(): Uri? {
